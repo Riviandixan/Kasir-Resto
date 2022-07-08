@@ -22,24 +22,31 @@ use App\Models\Transaksi;
 |
 */
 
-// Route::get('/', function () {
-//     return view('login');
-// });
-
 Route::get('/', function () {
+    return view('home');
+});
+
+// login
+Route::get('/login', function () {
     return view('login');
 })->name('login');
 Route::post('/login', [LoginController::class, 'authanticate']);
 Route::get('/logout', [LoginController::class, 'logout']);
-// Route::resource('admin', UserController::class);
+
+// admin
 Route::prefix('admin')->group(function() {
     Route::resource('admin', UserController::class);
 });
-// Route::resource('menu', MenuController::class);
+
+// manajer
 Route::prefix('manajer')->group(function(){
     Route::resource('menu', MenuController::class);
     Route::get('laporan', [LaporanController::class, 'index'])->name('laporan');
+    Route::get('/cetak', [LaporanController::class, 'cetak'])->name('cetak');
+
 });
+
+// kasir
 Route::prefix('kasir')->group(function(){
     Route::resource('transaksi', TransaksiController::class);
 });

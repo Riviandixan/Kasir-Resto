@@ -52,6 +52,8 @@
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             Filter Data
         </button>
+        {{-- Cetak pdf --}}
+        <a href="{{ route('cetak') }}" target="_blank" class="btn btn-success">Cetak PDF <i class="fas fa-print"></i></a>
     </div>
 </div>
 <br>

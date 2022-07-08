@@ -66,5 +66,5 @@
     </tr>
     @endforeach
 </table>
-
+{{ $transaksis->links() }}
 @endsection

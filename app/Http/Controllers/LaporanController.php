@@ -16,4 +16,12 @@ class LaporanController extends Controller
         return view('laporan.laporan', compact('transaksis'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
+
+    public function cetak()
+    {
+        $transaksis = Transaksi::with('menu')->get();
+
+        return view('laporan.cetak', compact('transaksis'))
+                    ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
 }

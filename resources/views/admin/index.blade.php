@@ -1,5 +1,4 @@
 @extends('layouts.admin')
-@section('content')
 @section('title')
     Home
 @endsection
@@ -13,6 +12,7 @@
 </nav>
 @endsection
 
+@section('content')
 <div class="row">
   <div class="col-lg-12 margin-tb">
       <div class="pull-left">
